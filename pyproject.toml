@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "chatgpt-handson"
+version = "0.1.0"
+description = ""
+authors = ["h-morozumi"]
+readme = "README.md"
+packages = [{include = "chatgpt_handson"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^0.27.6"
+gradio = "^3.30.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
