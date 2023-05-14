@@ -28,5 +28,5 @@ RUN poetry install --only main --no-root
 # Python script
 COPY ./chatgpt_bot.py /app/chatgpt_bot.py
 
-EXPOSE 7680
+EXPOSE 8080
 CMD ["python", "chatgpt_bot.py"]

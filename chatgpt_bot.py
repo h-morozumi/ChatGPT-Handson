@@ -51,7 +51,7 @@ class ChatGPT:
     def clear_history(self):
         self.message_history.clear()
 
-def run_gradio():
+def run_gradio(server_port, server_name):
     with gr.Blocks() as demo:
         chatbot = gr.Chatbot()
         input_box = gr.Textbox(show_label=False, placeholder="メッセージを入力してね").style(container=False)
@@ -64,7 +64,7 @@ def run_gradio():
         clear = gr.Button("Clear")
         clear.click(fn=chat_gpt.clear_history, inputs=None, outputs=chatbot, queue=False)
 
-    demo.launch()
+    demo.launch(server_port=server_port, server_name=server_name)
 
 if __name__ == "__main__":
-    run_gradio()
+    run_gradio(server_port=8080, server_name='0.0.0.0')
