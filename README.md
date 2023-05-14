@@ -32,6 +32,20 @@ python chatgpt_bot.py
 exit
 ```
 
+## Docker で実行
+
+```
+docker build -t chatgpt-handson:v1 .
+docker run -e OPENAI_API_KEY="xxxxxxxx" -e OPENAI_API_HOST="https://<endpoint>.openai.azure.com" -e OPENAI_API_VERSION="2023-03-15-preview" -e  AZURE_DEPLOYMENT_ID="yyyyyyy" -e OPENAI_DEFAULT_SYSTEM_PROMPT="あなたは親切な 親切なアシスタントです。問い合わせに対して簡潔に回答してください。" -p 7680:7680 chatgpt-handson:v1
+```
+
+Docker Hubリリース
+```
+docker build -t chatgpt-handson:v1 .
+docker tag chatgpt-handson:v1 {repo-name}.azurecr.io/chatgpt-handson:v1
+docker push {repo-name}.azurecr.io/chatgpt-handson:v1
+```
+
 
 ## 初期環境構築（メモ）
 
